@@ -7,7 +7,39 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\img\48-diners-club.svg" />
+    <None Include="wwwroot\img\Card Payment_Two Color.svg" />
+    <None Include="wwwroot\img\Checklist _Outline.svg" />
+    <None Include="wwwroot\img\Doctor_Flatline.svg" />
+    <None Include="wwwroot\img\Doctor_Isometric.svg" />
+    <None Include="wwwroot\img\Doctor_Monochromatic.svg" />
+    <None Include="wwwroot\img\Laboratory Analyst_Flatline.svg" />
+    <None Include="wwwroot\img\Laboratory Analyst_Monochromatic.svg" />
+    <None Include="wwwroot\img\Notifications_Monochromatic.svg" />
+    <None Include="wwwroot\img\pagos\48-diners-club.svg" />
+    <None Include="wwwroot\img\pagos\footer-amex.svg" />
+    <None Include="wwwroot\img\pagos\footer-mastercard.svg" />
+    <None Include="wwwroot\img\pagos\footer-visa.svg" />
+    <None Include="wwwroot\img\Progress _Monochromatic.svg" />
+    <None Include="wwwroot\img\Svg\undraw_female_avatar_w3jk.svg" />
+    <None Include="wwwroot\img\Svg\undraw_male_avatar_323b.svg" />
+    <None Include="wwwroot\img\Team meeting_Monochromatic.svg" />
+    <None Include="wwwroot\img\undraw_contact_us_re_4qqt.svg" />
+    <None Include="wwwroot\img\undraw_delivery_address_re_cjca.svg" />
+    <None Include="wwwroot\img\undraw_mobile_application_re_13u3.svg" />
+    <None Include="wwwroot\img\undraw_real_time_sync_re_nky7.svg" />
+    <None Include="wwwroot\img\undraw_two_factor_authentication_namy.svg" />
+    <None Include="wwwroot\img\undraw_visionary_technology_re_jfp7.svg" />
+    <None Include="wwwroot\js\funciones.js" />
+    <None Include="wwwroot\js\inicio.js" />
+    <None Include="wwwroot\js\login.js" />
+    <None Include="wwwroot\js\main.js" />
+    <None Include="wwwroot\js\menu.js" />
+    <None Include="wwwroot\js\patient.js" />
+    <None Include="wwwroot\js\script.js" />
     <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\js\sweetalert2.all.min.js" />
+    <None Include="wwwroot\js\venta.js" />
   </ItemGroup>
 
   <ItemGroup>

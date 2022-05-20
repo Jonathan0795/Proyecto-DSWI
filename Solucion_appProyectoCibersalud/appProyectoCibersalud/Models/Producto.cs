@@ -16,7 +16,7 @@ namespace appProyectoCibersalud.Models
 
         [Required, Display(Name = "Presentacion")] public string? tipopresentacion { get; set; }
 
-        [Required, Display(Name = "precio")] public decimal? precioproducto { get; set; }
+        [Required, Display(Name = "precio"),DisplayFormat(DataFormatString = "{0:C}")] public decimal? precioproducto { get; set; }
 
         [Required, Display(Name = "stock")] public decimal? stockproducto { get; set; }
 

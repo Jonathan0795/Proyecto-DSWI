@@ -25,6 +25,16 @@ namespace appProyectoCibersalud.Controllers
             ViewBag.categorias = await Task.Run(() => sCategorias.GetCategoriasTotal());
             return View(await Task.Run(() => sProducto.GetProducto("")));
         }
+        public async Task<IActionResult> Categoria()
+        {
+            ViewBag.categorias = await Task.Run(() => sCategorias.GetCategoriasTotal());
+            return View(await Task.Run(() => sProducto.GetProducto("")));
+        }
+        public async Task<IActionResult> Producto()
+        {
+            ViewBag.categorias = await Task.Run(() => sCategorias.GetCategoriasTotal());
+            return View(await Task.Run(() => sProducto.GetProducto("")));
+        }
 
 
     }
