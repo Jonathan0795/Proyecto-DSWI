@@ -64,36 +64,7 @@ idestado int check(idestado in(1,2,3))default 1,
 primary key (idproducto),
 foreign key (idlaboratorio)references tb_laboratorio(idlaboratorio),
 foreign key (idcategorias)references tb_categorias(idcategorias)
-);
-/*********************************************/
-create table tb_tienda
-(
-idTienda int IDENTITY(1,1) NOT NULL,
-idUbigeo char(6),
-nombre varchar(100),
-nro int,
-idEstado int check(IdEstado in(1,2,3)),
-fechaCreacion datetime,
-usuarioCreacion int,
-fechaModificacion datetime,
-usuarioModificacion int,
-primary key (idTienda),
-foreign key (idUbigeo)references tb_ubigeos(idUbigeo)
-);
-/********************************************************/
-create table tb_tiendaStock
-(
-idProducto int IDENTITY(1,1) NOT NULL,
-idTienda int,
-stock int,
-idEstado int check(idEstado in(1,2,3)),
-fechaCreacion datetime,
-usuarioCreacion int,
-fechaModificacion datetime,
-usuarioModificacion int,
-foreign key (idProducto)references tb_producto(idProducto),
-foreign key (idTienda)references tb_tienda(idTienda)
-);
+); 
 /********************************************************/
 create table tb_tipodocumento
 (
@@ -105,8 +76,7 @@ primary key(iddoc)
 create table tb_usuarios
 (
 idUsuario int IDENTITY(1,1) NOT NULL,
-tipoUsuario char(3)check(tipoUsuario in('ADM','VEN')),
-idTienda int,
+tipoUsuario char(3)check(tipoUsuario in('ADM','VEN')), 
 iddoc int,
 nroDoc char(8),
 nombre varchar(50),
@@ -124,8 +94,7 @@ usuarioCreacion int,
 fechaModificacion datetime,
 usuarioModificacion int,
 primary key(idUsuario),
-foreign key (iddoc)references tb_tipodocumento(iddoc),
-foreign key (idTienda)references tb_tienda(idTienda),
+foreign key (iddoc)references tb_tipodocumento(iddoc), 
 foreign key (idUbigeo)references tb_ubigeos(idUbigeo)
 );
 /******************************************/
@@ -155,8 +124,7 @@ foreign key (idUbigeo)references tb_ubigeos(idUbigeo)
 /******************************************/
 create table tb_venta
 (
-idVenta int IDENTITY(1,1) NOT NULL,
-idTienda int,
+idVenta int IDENTITY(1,1) NOT NULL, 
 idcliente int,
 idUsuario int,
 fechaPedido datetime,
@@ -166,8 +134,7 @@ fechaCreacion datetime,
 usuarioCreacion int,
 fechaModificacion datetime,
 usuarioModificacion int,
-primary key(idVenta),
-foreign key (idTienda)references tb_tienda(idTienda),
+primary key(idVenta), 
 foreign key (idcliente)references tb_cliente(idcliente),
 foreign key (idUsuario)references tb_usuarios(idUsuario)
 );

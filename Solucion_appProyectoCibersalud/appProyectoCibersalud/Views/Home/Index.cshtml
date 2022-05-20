@@ -1,0 +1,83 @@
+﻿@model IEnumerable<appProyectoCibersalud.Models.Producto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idproducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreproducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.detalleproducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipopresentacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precioproducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stockproducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.urlproducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idestado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idproducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreproducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.detalleproducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipopresentacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precioproducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stockproducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.urlproducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idestado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

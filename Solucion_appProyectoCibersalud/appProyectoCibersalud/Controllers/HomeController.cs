@@ -1,32 +1,31 @@
-﻿using appProyectoCibersalud.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Data;
+using Microsoft.Data.SqlClient;
+using Microsoft.AspNetCore.Session;
+using Newtonsoft.Json; //serializar en formato de cadena json
+using appProyectoCibersalud.Models;
+using appProyectoCibersalud.Models.Interface;
+using appProyectoCibersalud.Models.Repository;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace appProyectoCibersalud.Controllers
 {
     public class HomeController : Controller
-    {
-        private readonly ILogger<HomeController> _logger;
+    { 
+        IProducto sProducto;
+        ICategorias sCategorias;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IConfiguration configuration)
+        { 
+            sProducto = new ProductoRepository(configuration);
+            sCategorias = new CategoriasRepository(configuration);
+        }  
+        public async Task<IActionResult> Index()
         {
-            _logger = logger;
+            ViewBag.categorias = await Task.Run(() => sCategorias.GetCategoriasTotal());
+            return View(await Task.Run(() => sProducto.GetProducto("")));
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }
