@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 namespace appProyectoCibersalud.Models.Repository
 {
     public class CategoriasRepository : ICategorias
-    { 
+    {
         public CategoriasRepository(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -29,10 +29,9 @@ namespace appProyectoCibersalud.Models.Repository
                 while (dr.Read())
                 {
                     temporal.Add(new Categorias()
-                    { 
+                    {
                         idcategorias = dr.GetInt32(0),
-                        idcategoriapadre = dr.GetInt32(1),
-                        desccategoria = dr.GetString(2), 
+                        desccategoria = dr.GetString(2),
                         idestado = dr.GetInt32(3)
                     });
                 }
@@ -40,9 +39,9 @@ namespace appProyectoCibersalud.Models.Repository
             return temporal;
         }
 
-        public List<Categorias> GetCategoriasById(int idcategorias)
+        public Categorias GetCategoriasById(int idcategorias)
         {
-            List<Categorias> temporal = new List<Categorias>();
+            Categorias temporal = new Categorias();
             using (SqlConnection cn = new SqlConnection(this.Configuration.GetConnectionString("ConexionCiberSalud")))
             {
 
@@ -53,13 +52,12 @@ namespace appProyectoCibersalud.Models.Repository
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    temporal.Add(new Categorias()
+                    temporal = new Categorias()
                     {
                         idcategorias = dr.GetInt32(0),
-                        idcategoriapadre = dr.GetInt32(1),
                         desccategoria = dr.GetString(2),
                         idestado = dr.GetInt32(3)
-                    });
+                    };
                 }
             }
             return temporal;
@@ -81,7 +79,6 @@ namespace appProyectoCibersalud.Models.Repository
                     temporal.Add(new Categorias()
                     {
                         idcategorias = dr.GetInt32(0),
-                        idcategoriapadre = dr.GetInt32(1),
                         desccategoria = dr.GetString(2),
                         idestado = dr.GetInt32(3)
                     });
@@ -97,14 +94,14 @@ namespace appProyectoCibersalud.Models.Repository
             {
 
                 SqlCommand cmd = new SqlCommand("USP_Listar_Categorias_Padre", cn);
-                cmd.CommandType = CommandType.StoredProcedure; 
+                cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     temporal.Add(new Categorias()
                     {
-                        idcategorias = dr.GetInt32(0), 
+                        idcategorias = dr.GetInt32(0),
                         desccategoria = dr.GetString(2),
                         idestado = dr.GetInt32(3)
                     });
@@ -113,9 +110,9 @@ namespace appProyectoCibersalud.Models.Repository
             return temporal;
         }
 
-        public List<Categorias> GetCategoriasPadresById(int idcategorias)
+        public Categorias GetCategoriasPadresById(int idcategorias)
         {
-            List<Categorias> temporal = new List<Categorias>();
+            Categorias temporal = new Categorias();
             using (SqlConnection cn = new SqlConnection(this.Configuration.GetConnectionString("ConexionCiberSalud")))
             {
 
@@ -126,13 +123,12 @@ namespace appProyectoCibersalud.Models.Repository
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    temporal.Add(new Categorias()
+                    temporal = new Categorias()
                     {
                         idcategorias = dr.GetInt32(0),
-                        idcategoriapadre = dr.GetInt32(1),
                         desccategoria = dr.GetString(2),
                         idestado = dr.GetInt32(3)
-                    });
+                    };
                 }
             }
             return temporal;
@@ -144,8 +140,15 @@ namespace appProyectoCibersalud.Models.Repository
             foreach (Categorias item in temporal)
             {
                 item.CategoriasHijo = GetCategoriasHijosById(item.idcategorias).ToList();
-            } 
+            }
             return temporal;
         }
+
+        public Categorias GetCategoriasFamilia(int idcategorias)
+        {
+            Categorias temporal = GetCategoriasPadresById(idcategorias);
+            temporal.CategoriasHijo = GetCategoriasHijosById(temporal.idcategorias).ToList();
+            return temporal;
+        } 
     }
 }

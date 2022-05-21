@@ -211,9 +211,26 @@
             </div>
         </div>
         <div class=" contenedor__productos">
-            <div class="container__card">
+            <div class="container__titulo_productos">
+					<h1 class="titulo_productos-h1">@ViewBag.categoria.desccategoria</h1>
+				</div>
+				<ul> 
+                            <li>
+                                <a href="/Home/Categoria?cat=@ViewBag.catFamilia.idcategorias">@ViewBag.catFamilia.desccategoria</a> 
+                                <ul>
+                                    @foreach (var categoriasFamiliaHijo in ViewBag.catFamilia.CategoriasHijo)
+                                    {
+                                        <li>
+                                            <a class="desc__link-sub" href="/Home/Categoria?cat=@categoriasFamiliaHijo.idcategorias">
+                                                @categoriasFamiliaHijo.desccategoria
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </li> 
+				</ul>
 
-
+            <div class="container__card"> 
                 @foreach (var item in Model)
                 {
                     <div class="card__productos">
@@ -244,27 +261,26 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
-                    <nav arial-label="Pagination">
+                    <nav arial-label="Pagination">  
                         <ul class="pagination justify-content-center">
                             <li class="page-item  @(ViewBag.p==0 ?"disabled" :"") ">
-                                @Html.ActionLink("Anterior","Index","Home",new {p=(ViewBag.p<=0 ? 0 : ViewBag.p - 1)}, new{@class="page-link"})
+                                @Html.ActionLink("Anterior","Categoria","Home",new {p=(ViewBag.p<=0 ? 0 : ViewBag.p - 1)}, new{@class="page-link"})
                             </li>
                             @for (int i = 0; i < ViewBag.npags; i++)
                             {
                                 <li class="page-item @(i==ViewBag.p ?"active" :"")">
-                                    @Html.ActionLink((i+1).ToString(),"Index","Home",new {p=i}, new{@class="page-link"})
+                                    @Html.ActionLink((i+1).ToString(),"Categoria","Home",new {p=i}, new{@class="page-link"})
                                 </li>
                             }   
                             <li class="page-item  @(ViewBag.p==ViewBag.npags-1 ?"disabled" :"") "> 
-                                @Html.ActionLink("Siguiente","Index","Home",new {p=(ViewBag.p>=ViewBag.npags-1 ? ViewBag.npags-1 : ViewBag.p + 1)}, new{@class="page-link"})
+                                @Html.ActionLink("Siguiente","Categoria","Home",new {p=(ViewBag.p>=ViewBag.npags-1 ? ViewBag.npags-1 : ViewBag.p + 1)}, new{@class="page-link"})
                             </li>   
                         </ul>
 
                     </nav>
                 </div>
                 <div class="col-md-2"></div>
-            </div>
-
+            </div> 
         </div>
         <div class="conte__img-info">
             <img src="../img/demo.jpg" alt="" class="img__info-adi">

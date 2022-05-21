@@ -1,5 +1,16 @@
 use cibersalud
 go
+/*******************USP_Listar_Productos_x_IdProducto*************************/ 
+create or alter proc USP_Listar_Productos_x_IdProducto
+@idproducto int
+as
+select 
+	p.idproducto,p.idlaboratorio,p.idcategorias,p.nombreproducto,
+	p.detalleproducto,p.tipopresentacion,p.precioproducto,p.stockproducto,
+	p.urlproducto,p.idestado 
+	from tb_producto p with(nolock)
+	where p.idproducto = @idproducto
+go 
 /*******************USP_Listar_Productos_x_Nombre*************************/ 
 create or alter proc USP_Listar_Productos_x_Nombre 
 @Nombre varchar(150)   

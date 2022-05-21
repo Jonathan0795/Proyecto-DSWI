@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UawTVcz9DxzFDDpxncBy2zz6VF8RXViCcjwHV8BaBpc=",
+  "Hash": "8+SjHTjUtc8kah3N3MLv44K6G2u9inOe1/wd4R/yNmI=",
   "Source": "appProyectoCibersalud",
   "BasePath": "_content/appProyectoCibersalud",
   "Mode": "Default",
@@ -2718,6 +2718,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\undraw_visionary_technology_re_jfp7.svg"
+    },
+    {
+      "Identity": "C:\\Users\\javie\\Documents\\GitHub\\Proyecto-DSWI\\Solucion_appProyectoCibersalud\\appProyectoCibersalud\\wwwroot\\js\\autocomplete_Producto.js",
+      "SourceId": "appProyectoCibersalud",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\javie\\Documents\\GitHub\\Proyecto-DSWI\\Solucion_appProyectoCibersalud\\appProyectoCibersalud\\wwwroot\\",
+      "BasePath": "_content/appProyectoCibersalud",
+      "RelativePath": "js/autocomplete_Producto.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\autocomplete_Producto.js"
     },
     {
       "Identity": "C:\\Users\\javie\\Documents\\GitHub\\Proyecto-DSWI\\Solucion_appProyectoCibersalud\\appProyectoCibersalud\\wwwroot\\js\\funciones.js",

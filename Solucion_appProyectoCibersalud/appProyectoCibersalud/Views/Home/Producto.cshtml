@@ -1,6 +1,6 @@
-﻿@model IEnumerable<appProyectoCibersalud.Models.Producto>
+﻿@model appProyectoCibersalud.Models.Producto
 <title>Cibersalud</title>
-@{ 
+@{
     ViewBag.BodyClass = "body";
 }
 
@@ -142,132 +142,69 @@
         </div>
     </header>
     <main class="main">
-        <div class="contenedor-slider">
-            <div class="slider-contenedor">
-                <section class="contenido-slider">
-                    <div>
-                        <h2>
-                            Contamos con los mejores profesionales de la salud y tecnología médica para ofrecerte a
-                            ti y a tu familia el servicio que mereces.
-                        </h2>
-                        <a href="#">Contactanos</a>
+        <div class="contenedor__detalle-Pro">
+
+            <form method="Post" action="/producto/grabar">
+                <div class="detalle-Pro-section">
+
+                    <div class="detalle-img-Pro">
+                        <img class="img_det-Pro" src="@Url.Content($"~/img/Productos/{Model.urlproducto}")" />
                     </div>
-                    <img src="../img/Doctor_Monochromatic.svg" alt="">
+                    <div class="detalle-desc-Pro">
+                        <div class="titulos-des-Pro"> 
+                            @Html.DisplayFor(model => model.nombreproducto, new { @class = "titu-lbl-des" })
+                        </div>
+                        <div class="presentacion-des-Pro">
+                            @Html.DisplayFor(model => model.tipopresentacion, new { @class = "prese-lbl-des" })
+                        </div>
+                        <div class="precio-des-Pro">
+                            @Html.DisplayFor(model =>   model.precioproducto  , new { @class = "prec-lbl-des" })
+                        </div>
+                        <div class="cantidad-des-Pro">
+                            <label class="cant-lbl-des">Cantidad</label>
 
-                </section>
-                <section class="contenido-slider">
-                    <div>
-                        <h2>
-                            Su salud es nuestra prioridad. El alivo que necesitas lo encontrás en nuestra farmacia
-                            ofreciendote gran variedad de productos al mejor precio y al alcance de tu bolsillo.
-                        </h2>
-                    </div>
-                    <img src="../img/Team meeting_Monochromatic.svg" alt="">
-
-                </section>
-                <section class="contenido-slider">
-                    <div>
-                        <h2>
-                            Encuentra lo que necesitas al alcance de tus manos. Descarga nuestra aplicación en tu
-                            celular. Disponible para Google Play y App Store
-                        </h2>
-                    </div>
-                    <img src="../img/undraw_mobile_application_re_13u3.svg" alt="">
-
-                </section>
-                <section class="contenido-slider">
-                    <div>
-                        <h2>
-                            Porque sabemos que te gusta siempre lo mejor. Muy pronto podras realizar tus compras sin
-                            salir de casa de una manera segura y rápida.
-                        </h2>
-                        <a href="#">Contact us</a>
-                    </div>
-                    <img src="../img/undraw_delivery_address_re_cjca.svg" alt="">
-
-                </section>
-                <section class="contenido-slider">
-                    <div>
-                        <h2>
-                            Contamos con los mejores profesionales de la salud y tecnología medica para ofrecerte a
-                            ti y a tu familia el servicio que mereces 5
-                        </h2>
-                        <a href="#">Contactanos</a>
-                    </div>
-                    <img src="../img/Doctor_Monochromatic.svg" alt="">
-
-                </section>
-                <section class="contenido-slider">
-                    <div>
-                        <h2>
-                            >Contamos con los mejores profesionales de la salud y tecnología médica para ofrecerte a
-                            ti y a tu familia el servicio que mereces. 6
-                        </h2>
-                        <a href="#">Contact us</a>
-                    </div>
-                    <img src="../img/undraw_delivery_address_re_cjca.svg" alt="">
-
-                </section>
-            </div>
-        </div>
-        <div class=" contenedor__productos">
-            <div class="container__card">
-
-
-                @foreach (var item in Model)
-                {
-                    <div class="card__productos">
-
-                        <div class="producto__imagenes">
-                            <img class="img__producto" src="@Url.Content($"~/img/Productos/{item.urlproducto}")" />
-                            <div class="img__more">
-                                @Html.ActionLink("Vista rápida","Producto",new{id=item.idproducto},new{@class="label__more"})
+                            <div class="container__cantidad-modal">
+                                <a href="#" class="restar-modal"
+                                   title="Dismiunir la cantidad">-</a><input type="text"
+                                                                             class="cantidad__input-modal" value="1"><a href="#" class="sumar-modal"
+                                                                                                                        title="Aumentar la cantidad">+</a>
                             </div>
-
                         </div>
-                        <div class="producto__titulo">
-                            @Html.DisplayFor(modelItem => item.nombreproducto, new { @class = "label__producto" })
+                        <div class="button-des-Pro">
+                            <a href="#" class="btn-des-Pro">Agregar al carrito</a>
                         </div>
-                        <div class="producto__precio">
-
-                            @Html.DisplayFor(modelItem =>   item.precioproducto  , new { @class = "label__precio" })
-
+                        <div class="informacion-des-Pro">
+                            <label class="info-lbl-des">INFORMACIÓN DEL PRODUCTO</label>
+                            @Html.DisplayFor(model =>   model.detalleproducto  , new { @class = "desc_info-lbl-des" })
                         </div>
-
-                        <div class="boton__producto">
-                            <a href="#" class="button__agregar">Agregar al carrito</a>
+                        <div class="envio-des-Pro">
+                            <label class="envio-lbl-des">Métodos de entrega:</label>
+                            <label class="envio-lbl-des"><i class="fa-solid fa-shop"></i> Recogo en tienda</label>
                         </div>
                     </div>
-                }
-
-            </div>
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <nav arial-label="Pagination">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item  @(ViewBag.p==0 ?"disabled" :"") ">
-                                @Html.ActionLink("Anterior","Index","Home",new {p=(ViewBag.p<=0 ? 0 : ViewBag.p - 1)}, new{@class="page-link"})
-                            </li>
-                            @for (int i = 0; i < ViewBag.npags; i++)
-                            {
-                                <li class="page-item @(i==ViewBag.p ?"active" :"")">
-                                    @Html.ActionLink((i+1).ToString(),"Index","Home",new {p=i}, new{@class="page-link"})
-                                </li>
-                            }   
-                            <li class="page-item  @(ViewBag.p==ViewBag.npags-1 ?"disabled" :"") "> 
-                                @Html.ActionLink("Siguiente","Index","Home",new {p=(ViewBag.p>=ViewBag.npags-1 ? ViewBag.npags-1 : ViewBag.p + 1)}, new{@class="page-link"})
-                            </li>   
-                        </ul>
-
-                    </nav>
                 </div>
-                <div class="col-md-2"></div>
-            </div>
-
+            </form>
         </div>
-        <div class="conte__img-info">
-            <img src="../img/demo.jpg" alt="" class="img__info-adi">
+        <div class="container__cate-Pro">
+            <h1 class="titulo-cate-Pro">Categorías que podrían interesarte</h1>
+            <div class="cate-Pro">
+                <div class="card-cate-Pro">
+                    <a href="/Home/Categoria?cat=1"><i class="fa-solid fa-prescription-bottle-medical"></i></a>
+                    <label class=" lbl-card-cate">Farmacia</label>
+                </div>
+                <div class="card-cate-Pro">
+                    <a href="/Home/Categoria?cat=7"><i class="fa-solid fa-pump-medical"></i></a>
+                    <label class="lbl-card-cate">Cuidado Personal</label>
+                </div>
+                <div class="card-cate-Pro">
+                    <a href="/Home/Categoria?cat=13"><i class="fa-solid fa-baby"></i></a>
+                    <label class="lbl-card-cate">Cuidado del Bebé</label>
+                </div>
+                <div class="card-cate-Pro">
+                    <a href="/Home/Categoria?cat=19"><i class="fa-solid fa-hands-bubbles"></i></a>
+                    <label class="lbl-card-cate">Dermatología</label>
+                </div>
+            </div>
         </div>
     </main>
     <footer class="footer">
@@ -325,7 +262,7 @@
                             </span>
                         </p>
                         <p class="p-help">
-                            <i class="fas fa-envelope"></i> Escríbenos a <span class="span-help">cibersalud@gmail.com</span>w
+                            <i class="fas fa-envelope"></i> Escríbenos a <span class="span-help">cibersalud@gmail.com</span>
                         </p>
                     </div>
                 </div>
