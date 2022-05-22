@@ -15,6 +15,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\javie\Documents\GitHub\Proyecto-DSWI\Solucion_appProyectoCibersalud\appProyectoCibersalud
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/javie/Documents/GitHub/Proyecto-DSWI/Solucion_appProyectoCibersalud/appProyectoCibersalud/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/javie/Documents/GitHub/Proyecto-DSWI/Solucion_appProyectoCibersalud/appProyectoCibersalud/Views/Admin/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/javie/Documents/GitHub/Proyecto-DSWI/Solucion_appProyectoCibersalud/appProyectoCibersalud/Views/Admin/ProductoListar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdG9MaXN0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/javie/Documents/GitHub/Proyecto-DSWI/Solucion_appProyectoCibersalud/appProyectoCibersalud/Views/Home/Canasta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYW5hc3RhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/javie/Documents/GitHub/Proyecto-DSWI/Solucion_appProyectoCibersalud/appProyectoCibersalud/Views/Home/Categoria.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yaWEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -24,6 +24,8 @@ namespace appProyectoCibersalud.Models
 
         [Display(Name = "Estado")] public int idestado { get; set; }
 
+        [Required, Display(Name = "Cantidad")] public int? cantidad { get; set; }
+
         [Required, Display(Name = "Estado Descripcion")] public string estado { get { if (idestado == 1) return "Activo"; return "Inactivo"; } }
     }
 }

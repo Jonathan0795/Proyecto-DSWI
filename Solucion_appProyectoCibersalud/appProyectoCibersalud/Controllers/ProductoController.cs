@@ -8,5 +8,9 @@ namespace appProyectoCibersalud.Controllers
         {
             return View();
         }
+        public IActionResult principal()
+        {
+            return View();
+        }
     }
 }

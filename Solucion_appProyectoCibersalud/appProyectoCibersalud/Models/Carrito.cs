@@ -18,7 +18,7 @@ namespace appProyectoCibersalud.Models
 
         [Required, Display(Name = "precio")] public decimal? precioproducto { get; set; }
 
-        [Required, Display(Name = "stock")] public int? stockproducto { get; set; }
+        [Required, Display(Name = "stock")] public decimal? stockproducto { get; set; }
 
         [Required, Display(Name = "url")] public string? urlproducto { get; set; }
 
@@ -29,5 +29,22 @@ namespace appProyectoCibersalud.Models
         [Display(Name = "Estado")] public int idestado { get; set; }
 
         [Required, Display(Name = "Estado Descripcion")] public string estado { get { if (idestado == 1) return "Activo"; return "Inactivo"; } }
+
+        public Carrito() { 
+        }
+        public Carrito(Producto prod)
+        {
+            this.idproducto = prod.idproducto;
+            this.laboratorio = prod.laboratorio;
+            this.categoria = prod.categoria;
+            this.nombreproducto = prod.nombreproducto;
+            this.detalleproducto = prod.detalleproducto;
+            this.tipopresentacion = prod.tipopresentacion;
+            this.precioproducto = prod.precioproducto;
+            this.stockproducto = prod.stockproducto;
+            this.urlproducto = prod.urlproducto; 
+            this.cantidad = prod.cantidad;  
+            this.idestado = prod.idestado;
+        }
     }
 }

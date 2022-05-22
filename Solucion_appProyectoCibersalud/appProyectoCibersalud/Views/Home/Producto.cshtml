@@ -52,7 +52,7 @@
                     <label class="label__subtotal-title">Subtotal</label><label class="label__subtotal-car">S/. 150.00</label>
                 </div>
                 <div class="footer__button-modal">
-                    <a href="carrito.html" title="" class="button__carrito-modal">
+                    <a href="/Home/canasta" title="" class="button__carrito-modal">
                         Ver
                         carrito
                     </a>
@@ -143,8 +143,9 @@
     </header>
     <main class="main">
         <div class="contenedor__detalle-Pro">
-
-            <form method="Post" action="/producto/grabar">
+            
+            <form asp-action="Producto" method="post"> 
+    @Html.Hidden("codigo",Model.idproducto) 
                 <div class="detalle-Pro-section">
 
                     <div class="detalle-img-Pro">
@@ -165,13 +166,14 @@
 
                             <div class="container__cantidad-modal">
                                 <a href="#" class="restar-modal"
-                                   title="Dismiunir la cantidad">-</a><input type="text"
-                                                                             class="cantidad__input-modal" value="1"><a href="#" class="sumar-modal"
-                                                                                                                        title="Aumentar la cantidad">+</a>
+                                   title="Dismiunir la cantidad">-</a> 
+                                    @Html.TextBox("cantidad",0,new{ @class = "cantidad__input-modal",type="number",min=1, max=Model.cantidad})  
+                                   <a href="#" class="sumar-modal"
+                                   title="Aumentar la cantidad">+</a>
                             </div>
                         </div>
-                        <div class="button-des-Pro">
-                            <a href="#" class="btn-des-Pro">Agregar al carrito</a>
+                        <div class="button-des-Pro"> 
+                            <input type="submit" value="Agregar al carrito" class="btn-des-Pro"  /> 
                         </div>
                         <div class="informacion-des-Pro">
                             <label class="info-lbl-des">INFORMACIÓN DEL PRODUCTO</label>

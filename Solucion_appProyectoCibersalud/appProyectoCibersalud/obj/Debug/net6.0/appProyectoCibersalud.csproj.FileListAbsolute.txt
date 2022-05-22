@@ -263,3 +263,4 @@ C:\Users\javie\Documents\GitHub\Proyecto-DSWI\Solucion_appProyectoCibersalud\app
 C:\Users\javie\Documents\GitHub\Proyecto-DSWI\Solucion_appProyectoCibersalud\appProyectoCibersalud\obj\Debug\net6.0\ref\appProyectoCibersalud.dll
 C:\Users\javie\Documents\GitHub\Proyecto-DSWI\Solucion_appProyectoCibersalud\appProyectoCibersalud\obj\Debug\net6.0\appProyectoCibersalud.RazorAssemblyInfo.cache
 C:\Users\javie\Documents\GitHub\Proyecto-DSWI\Solucion_appProyectoCibersalud\appProyectoCibersalud\obj\Debug\net6.0\appProyectoCibersalud.RazorAssemblyInfo.cs
+C:\Users\javie\Documents\GitHub\Proyecto-DSWI\Solucion_appProyectoCibersalud\appProyectoCibersalud\bin\Debug\net6.0\PayPal.dll
